@@ -1,0 +1,19 @@
+# Ignore composer and node modules
+composer.lock
+vendor
+
+# Ignore unused folders
+awesome
+
+# Ignore the html folder
+html
+
+# Vagrant related files
+.vagrant/
+Vagrantfile
+
+# For macs
+.DS_Store
+
+# Other
+.idea/
