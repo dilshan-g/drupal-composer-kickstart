@@ -1,5 +1,9 @@
 # -*- mode: ruby -*-
 
+project_name = "dck"
+project_dev_ip = "192.168.56.101"
+project_dev_hostname = "mydrupalsite.dev"
+
 dir = File.dirname(File.expand_path(__FILE__))
 
 require 'yaml'
@@ -25,5 +29,29 @@ data = configValues['vagrantfile']
 Vagrant.require_version '>= 1.8.1'
 
 Vagrant.configure('2') do |config|
+
+  # Enable ssh forward agent
+  config.ssh.forward_agent = true
+
+	config.vm.provider :virtualbox do |vbox|
+	    vbox.gui = false
+	    vbox.customize ["modifyvm", :id, "--memory", "512"]
+	    vbox.customize ["modifyvm", :id, "--cpus", "2"]
+	    vbox.customize ["modifyvm", :id, "--ioapic", "on"]
+	    vbox.name = "mydrupalsite.dev"
+	end
+
+	config.vm.define "dck" do |dck|
+	    dck.vm.host_name = project_dev_hostname
+	    dck.vm.network "private_network", ip: project_dev_ip
+	    dck.vm.network :forwarded_port, guest: 80, host: 8080, auto_correct: true
+	    dck.vm.network :forwarded_port, guest: 1080, host: 1090, auto_correct: true
+	end
+
+	config.vm.synced_folder "html", "/var/www/html", id: "vagrant-root",
+	:owner => "vagrant",
+	:group => "www-data",
+	:mount_options => ["dmode=775","fmode=664"]
+
   eval File.read("#{dir}/puphpet/vagrant/Vagrantfile-#{data['target']}")
 end
