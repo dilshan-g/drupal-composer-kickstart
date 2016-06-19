@@ -279,7 +279,7 @@ blackfire:
 xhprof:
     install: '0'
 wpcli:
-    install: '0'
+    install: '1'
     version: v0.21.1
 drush:
     install: '1'
@@ -300,7 +300,7 @@ python:
     packages: {  }
     versions: {  }
 nodejs:
-    install: '0'
+    install: '1'
     settings:
         version: '5'
     npm_packages: {  }
