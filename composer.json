@@ -9,17 +9,13 @@
     "composer/installers": "~1.0",
     "derhasi/composer-preserve-paths": "0.1.*",
     "drupal/drupal": "7.*",
-    "symfony/yaml": "~2.6",
-    "monolog/monolog": "1.8.0",
-    "elasticsearch/elasticsearch": "~2.0"
+    "symfony/yaml": "~2.6"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "2.4.0",
     "drupal/coder": "8.2.4",
     "phpunit/phpunit": "3.7.*",
-    "mockery/mockery": "0.9.*",
-    "phing/phing": "dev-master",
-    "anahkiasen/rocketeer": "~2.2"
+    "mockery/mockery": "0.9.*"
   },
   "conflict": {
     "drupal/core": "8.*"
