@@ -32,3 +32,20 @@ This simple drupal based vm can be setup using few steps:
    - This will install Drupal 7 inside the vm
 
 6) Go to http://mydrupalsite.dev/ of your browser and Done !
+
+##### Note : if you don't have vagrant-hostupdater installed, you must maually add this entry to your hosts. `192.168.56.101  mydrupalsite.dev`
+
+### Compatibility 
+
+I have tested this on both OS X El Capitan and Ubuntu 16.04 (Xenial Xerus), But not tested on Windows.
+
+### Where to go from here
+
+This vm installs only the Drupal standard profile with few necessary modules. I have added few dependencies which are commonly used by developers. 
+ - You can try creating your own profile to add more modules to build your own site.
+ - You can install more dependencies to composer in order to build your site. Such as rocketeer for deployments, elasticsearch to index documents for search. You only need to run a simple commad like this to add any dependency `composer require drupal/coder 8.2.4` 
+ - Or if you are an out of the box thinker, try creating a vm for your preferred PHP Framework/CMS using this repository as a base.  
+
+
+ 
+
