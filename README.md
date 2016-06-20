@@ -10,6 +10,7 @@ To run this vm you should install the below list:
 - vagrant-hostsupdater plugin
    - You don't have to worry about adding box ip into your etc/hosts when you have this plugin.
 - Composer latest version
+- Git latest version
 
 ### Installation
 
