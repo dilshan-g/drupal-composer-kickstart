@@ -1,6 +1,18 @@
 # drupal-composer-kickstart
 Provides a puphpet based virtual environment with a Drupal installation
 
+### prerequisites
+
+To run this vm you should install the below list:
+
+- Vagrant 1.8.*
+- VirtualBox latest version
+- vagrant-hostsupdater plugin
+   - You don't have to worry about adding box ip into your etc/hosts when you have this plugin.
+- Composer latest version
+
+### Installation
+
 This simple drupal based vm can be setup using few steps:
 
 1) Clone the repository `git@github.com:dilshan-g/drupal-composer-kickstart.git`.
