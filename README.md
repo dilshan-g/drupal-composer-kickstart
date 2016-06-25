@@ -35,6 +35,15 @@ This simple drupal based vm can be setup using few steps:
 
 ##### Note : if you don't have vagrant-hostupdater installed, you must maually add this entry to your hosts. `192.168.56.101  mydrupalsite.dev`
 
+#### Make a synced folder
+
+After setting up this vm you might want to access the drupal files using phpstorm or any other editor, for that you have to make it a synced folder. Add this code snippet to your vagrant file and provision it again.
+
+	`config.vm.synced_folder "html", "/var/www/html", id: "vagrant-root",
+	:owner => "vagrant",
+	:group => "www-data",
+	:mount_options => ["dmode=775","fmode=664"]`
+
 ### Compatibility 
 
 I have tested this on both OS X El Capitan and Ubuntu 16.04 (Xenial Xerus), But not tested on Windows.
